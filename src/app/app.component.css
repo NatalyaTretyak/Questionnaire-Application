@@ -1,14 +1,1 @@
-.main-section {
-  display: flex;
-  justify-content: center;
-}
 
-p-radioButton {
-  display: block;
-  margin-top: 1rem;
-  margin-right: 1rem;
-}
-
-button {
-  margin: 2rem;
-}

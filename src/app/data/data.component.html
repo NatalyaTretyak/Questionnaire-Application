@@ -1,0 +1,38 @@
+<div class="main-section">
+  <div class="section-container">
+    <h1>Наскільки ти кіберспортивний експерт</h1>
+    <p>Запитання № {{ questionNumber + 1 }}</p>
+    <p>{{ questionnaireData[questionNumber].question }}</p>
+
+    <p-radioButton
+      *ngFor="let answer of questionnaireData[questionNumber].answers"
+      name="groupname"
+      value="{{ answer }}"
+      label="{{ answer }}"
+      [(ngModel)]="selectedAnswer"
+      (onClick)="onAnswerSelected()"
+    ></p-radioButton>
+
+    <span>{{ questionNumber + 1 }}/{{ questions }}</span>
+    <button
+      *ngIf="condition; else unset"
+      pButton
+      type="button"
+      label="Продовжити"
+      [disabled]="isButtonDisabled"
+      (click)="handleClick()"
+    ></button>
+
+    <ng-template #unset>
+      <a [routerLink]="['result', sum, questions]"
+        ><button
+          pButton
+          type="resultButton"
+          label="Результат"
+          [disabled]="isButtonDisabled"
+          (click)="getResult()"
+        ></button
+      ></a>
+    </ng-template>
+  </div>
+</div>

@@ -9,9 +9,11 @@ import { AppComponent } from './app.component';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { ButtonModule } from 'primeng/button';
 import { AppService } from './appservice';
+import { ResultComponent } from './result/result.component';
+import { DataComponent } from './data/data.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ResultComponent, DataComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
