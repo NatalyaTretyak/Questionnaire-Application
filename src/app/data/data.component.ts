@@ -31,7 +31,6 @@ export class DataComponent implements OnInit {
   }
 
   onAnswerSelected() {
-    console.log(this.selectedAnswer);
     this.updateIsButtonDisabled();
   }
 
@@ -49,12 +48,15 @@ export class DataComponent implements OnInit {
     this.questionNumber++;
     this.selectedAnswer = null;
     this.updateIsButtonDisabled();
-    console.log(this.questionNumber);
-    console.log(this.sum);
   }
 
   getResult() {
-    this.router.navigate(['/result/sum/questions']);
+    if (
+      this.selectedAnswer ===
+      this.questionnaireData[this.questionNumber].correct_answers[0]
+    ) {
+      this.sum++;
+    }
   }
 
   updateIsButtonDisabled() {
